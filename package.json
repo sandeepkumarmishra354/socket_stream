@@ -1,0 +1,35 @@
+{
+  "name": "socket_stream",
+  "version": "1.0.0",
+  "description": "emit and pipe streams through socket.io",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "keywords": [
+    "socket",
+    "stream",
+    "pipe"
+  ],
+  "author": {
+    "email": "dev.veerusandy@gmail.com",
+    "name": "sandeep mishra",
+    "url": "https://sandyveeru.in/"
+  },
+  "license": "MIT",
+  "private":false,
+  "engines": {"node": ">=8.0.0"},
+  "engineStrict": true,
+  "repository": {
+    "type": "git",
+    "url": "ff"
+  },
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/socket.io": "^2.1.10",
+    "typescript": "^3.9.7"
+  }
+}
