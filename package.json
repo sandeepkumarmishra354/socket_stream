@@ -1,6 +1,6 @@
 {
-  "name": "socket_stream",
-  "version": "1.0.0",
+  "name": "stream_socket",
+  "version": "1.0.1",
   "description": "emit and pipe streams through socket.io",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
   "engineStrict": true,
   "repository": {
     "type": "git",
-    "url": "ff"
+    "url": "https://github.com/sandeepkumarmishra354/socket_stream.git"
   },
   "dependencies": {
     "socket.io": "^2.3.0"
