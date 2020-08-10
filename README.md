@@ -16,7 +16,7 @@ npm install stream_socket
 //client side
 
 import { SocketStream } from "stream_socket";
-import io from "socket.io";
+import io from "socket.io-client";
 import path from "path";
 import fs from "fs";
 
@@ -35,6 +35,37 @@ socket.on("connect", () => {
 
   //emit event (send file as strean)
   socket_stream.emit("some-event-3", fs.createReadStream('my-file.jpg'), {name:'my-file.jpg'});
+});
+```
+
+```javascript
+//server side
+
+import { SocketStream } from "stream_socket";
+import io from "socket.io";
+import path from "path";
+import fs from "fs";
+
+---------
+---------
+---------
+---------
+
+const sio = io(server);
+
+const socket_stream = new SocketStream(sio);
+
+socket.on("connect", (client) => {
+  //register for event (receive file as stream)
+  let client_stream = new SocketStream(client);
+  client_stream.on("some-event-2", (stream, file_info) => {
+    //save file
+    let fileName = path.basename(file_info.name);
+    strean.pipe(fs.createWriteStream(fileName));
+  });
+
+  //emit event (send file as strean)
+  socket_stream.emit("some-event-1", fs.createReadStream('my-file.jpg'), {name:'my-file.jpg'});
 });
 ```
 
