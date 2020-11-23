@@ -28,7 +28,7 @@ socket.on("connect", () => {
   socket_stream.on("some-event-1", (stream, file_info) => {
     //save file
     let fileName = path.basename(file_info.name);
-    strean.pipe(fs.createWriteStream(fileName));
+    stream.pipe(fs.createWriteStream(fileName));
     //you can also even send this stream as well
     socket_stream.emit('some-event-2',stream,file_info);
   });
